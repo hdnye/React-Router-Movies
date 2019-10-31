@@ -22,8 +22,10 @@ const MovieList = props => {
   return (
     <div className="movie-list">
       {movies.map(movie => (
-        <MovieDetails key={movie.id} movie={movie} />
-      ))}
+      <Link to={`/Movies/${movie.id}`}>
+       <MovieDetails key={movie.id} movie={movie} /> 
+      </Link>
+        ))}
     </div>
   );
 }
@@ -51,9 +53,7 @@ function MovieDetails({ movie }) {
            {star}
          </div> 
       ))}
-
-      <Link to='/movies/:id'>Movies</Link>
-   
+       
     </div>
   );
 }
